@@ -3,10 +3,11 @@ package sample;
 import java.util.*;
 
 public class Polygon {
-    private Map<String, Quadrilateral> allQuadrilaterals=new TreeMap<>();
-    private Map<String, Point> allPoints=new TreeMap<String, Point>();
+    private Map<String, Quadrilateral> allQuadrilaterals;
+    private Map<String, Point> allPoints;
 
     public void createAllCombinationsOfQuadrilaterals(){
+        allQuadrilaterals=new TreeMap<>();
         List<String> allPointsKey=new LinkedList<String>(allPoints.keySet());
         createAllQuadrilaterals(allPointsKey);
     }
@@ -47,13 +48,14 @@ public class Polygon {
             tempCount= quadrilateral.checkRectangle();
             rectangleCount +=tempCount;
             if(tempCount==1){
-                System.out.println("Point key: " + oneQuadrilateralKey);
+                System.out.println("Points are: " + oneQuadrilateralKey);
             }
         }
         System.out.println("Total Rectangle: " + rectangleCount);
     }
     public void createPolygonScenario1(){
-        allPoints.clear();
+//        allPoints.clear();
+        allPoints=new TreeMap<String, Point>();
         //Scenario 1 => 1
         allPoints.put("P1", new Point(1,1));
         allPoints.put("P2", new Point(4,1));
@@ -61,7 +63,7 @@ public class Polygon {
         allPoints.put("P4", new Point(4,3));
     }
     public void createPolygonScenario2(){
-        allPoints.clear();
+        allPoints=new TreeMap<String, Point>();
         //Scenario2 => 1
         allPoints.put("P1", new Point(1,1));
         allPoints.put("P2", new Point(4,1));
@@ -70,7 +72,7 @@ public class Polygon {
         allPoints.put("P5", new Point(5,1));
     }
     public void createPolygonScenario3(){
-        allPoints.clear();
+        allPoints=new TreeMap<String, Point>();
         //Scenario3 => 3
         allPoints.put("P1", new Point(1,1));
         allPoints.put("P2", new Point(4,1));
@@ -81,7 +83,7 @@ public class Polygon {
 
     }
     public void createPolygonScenario4(){
-        allPoints.clear();
+        allPoints=new TreeMap<String, Point>();
         //Scenario 4 => 0
         allPoints.put("P1", new Point(2,2));
         allPoints.put("P2", new Point(9,2));
@@ -91,7 +93,7 @@ public class Polygon {
         allPoints.put("P6", new Point(18,8));
     }
     public void createPolygonScenario5(){
-        allPoints.clear();
+        allPoints=new TreeMap<String, Point>();
         //Scenario5 => 10
         allPoints.put("P1", new Point(1,1));
         allPoints.put("P2", new Point(0,1));
@@ -105,7 +107,7 @@ public class Polygon {
 
     }
     public void createPolygonScenario6(){
-        allPoints.clear();
+        allPoints=new TreeMap<String, Point>();
         //Scenario6  => 10
         allPoints.put("P1", new Point(2,2));
         allPoints.put("P2", new Point(0,2));
@@ -119,7 +121,7 @@ public class Polygon {
 
     }
     public void createPolygonScenario7(){
-        allPoints.clear();
+        allPoints=new TreeMap<String, Point>();
         //Scenario 7 => 6
         allPoints.put("P1", new Point(2,2));
         allPoints.put("P2", new Point(0,2));
@@ -132,7 +134,7 @@ public class Polygon {
 
     }
     public void createPolygonScenario8(){
-        allPoints.clear();
+        allPoints=new TreeMap<String, Point>();
         //Scenario 8 => 3
         allPoints.put("P2", new Point(0,2));
         allPoints.put("P3", new Point(-2,2));
@@ -144,7 +146,7 @@ public class Polygon {
 
     }
     public void createPolygonScenario9(){
-        allPoints.clear();
+        allPoints=new TreeMap<String, Point>();
         //Scenario9  => 6
         allPoints.put("P2", new Point(0,2));
         allPoints.put("P3", new Point(-2,2));
@@ -156,7 +158,7 @@ public class Polygon {
         allPoints.put("P9", new Point(0,0));
     }
     public void createPolygonScenario10(){
-        allPoints.clear();
+        allPoints=new TreeMap<String, Point>();
         //Scenario 10 => 0
         allPoints.put("P1", new Point(1,0));
         allPoints.put("P2", new Point(2,0));
@@ -165,7 +167,7 @@ public class Polygon {
         allPoints.put("P5", new Point(5,0));
     }
     public void createPolygonScenario11(){
-        allPoints.clear();
+        allPoints=new TreeMap<String, Point>();
         //Scenario11 =>15
         allPoints.put("P1", new Point(1,1));
         allPoints.put("P2", new Point(2,1));
@@ -179,8 +181,5 @@ public class Polygon {
         allPoints.put("P10", new Point(4,3));
         allPoints.put("P11", new Point(5,3));
         allPoints.put("P12", new Point(6,3));
-
     }
-
-
 }
